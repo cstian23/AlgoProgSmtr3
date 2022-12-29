@@ -2,15 +2,15 @@ package Proyek;
 
 public class Mahasiswa
 {
-    private String nim;
+    private int nim;
     private String nama;
 
-    public void setNim(String nim)
+    public void setNim(int nim)
     {
         this.nim = nim;
     }
 
-    public String getNim()
+    public int getNim()
     {
         return this.nim;
     }
