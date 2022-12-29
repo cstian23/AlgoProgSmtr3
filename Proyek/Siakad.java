@@ -1,6 +1,5 @@
 package Proyek;
 import java.util.*;
-import java.io.*;
 
 import javax.lang.model.element.QualifiedNameable;
 
@@ -14,7 +13,7 @@ public class Siakad
         System.out.println("Silahkan tambah data");
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukkan NIM = ");
-        int nim = scan.nextInt();
+        long nim = scan.nextLong();
         scan.nextLine();
         System.out.print("Masukkan Nama = ");
         String nama = scan.nextLine();
@@ -52,21 +51,21 @@ public class Siakad
             case 1:
             {
                 System.out.print("Ketik NIM yang ingin anda cari : ");
-                int ls = scan.nextInt();
+                long ls = scan.nextLong();
                 linearSearch(ls);
                 break;
             }
             case 2:
             {
                 System.out.print("Ketik NIM yang ingin anda cari : ");
-                int bs = scan.nextInt();
+                long bs = scan.nextLong();
                 binarySearch(bs);
                 break;
             }
         }
     }
 
-    public static void linearSearch(int ls)
+    public static void linearSearch(long ls)
     {
         int n = jumlahData;
         for(int i = 0; i < n; i++)
@@ -78,7 +77,7 @@ public class Siakad
         }
     }
 
-    public static void binarySearch(int bs)
+    public static void binarySearch(long bs)
     {
         int l = 0, r = jumlahData - 1;
         while(l <= r)
@@ -354,14 +353,14 @@ public class Siakad
     {
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukkan NIM dari data yang ingin anda edit : ");
-        int edit = scan.nextInt();
+        long edit = scan.nextLong();
         System.out.println("---------------------------------------------------------------------------");
         for(int i = 0; i < jumlahData; i++)
         {
             if(mahasiswa[i].getNim() == edit)
             {
                 System.out.print("Masukkan NIM = ");
-                int Enim = scan.nextInt();
+                long Enim = scan.nextLong();
                 scan.nextLine();
                 System.out.print("Masukkan Nama = ");
                 String Enama = scan.nextLine();
@@ -375,7 +374,7 @@ public class Siakad
     {
         Scanner scan = new Scanner(System.in);
         System.out.print("Masukkan NIM dari data yang ingin anda hapus : ");
-        int del = scan.nextInt();
+        long del = scan.nextLong();
         for(int i = 0; i < jumlahData; i++)
         {
             if(mahasiswa[i].getNim() == del)
@@ -383,9 +382,9 @@ public class Siakad
                 System.out.println("---------------------------------------------------------------------------");
                 System.out.println("Mahasiswa yang ada hapus adalah " + mahasiswa[i].getNama() + "\ndengan nim " + mahasiswa[i].getNim());
                 mahasiswa[i] = mahasiswa[i + 1];
-                jumlahData--;
             }
         }
+        jumlahData--;
     }
 
     public static void UAS()
